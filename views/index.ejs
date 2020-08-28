@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--ACA VA EL HEAD-->
+<%- include('partials/head') %> 
+
+  <body>
+   <!--ACA VA EL HEADER-->
+   <%- include('partials/header') %> 
+
+    <!-- SECCION DEL BANNER-->
+
+    <section class="banner">
+      <img src="/images/img-home-banner.jpg" alt="" />
+    </section>
+
+    <div class="container">
+      <section>
+        <div class="row productos">
+          <div class="col-12 titulo">
+            <h2>Basado en tu última visita</h2>
+          </div>
+
+<% visitados.forEach(producto => { %>
+ 
+
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="contenido">
+              <figure>
+                <a href=""
+                  ><img src="/images/products/<%= producto.image %> " alt=""
+                /></a>
+              </figure>
+              <article>
+                <h2>
+                  $<%= producto.price %> 
+                </h2>
+                <span><%= producto.discount %>% OFF</span>
+                <p><%= producto.name %> </p>
+                <i class="fas fa-truck"></i>
+              </article>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+
+        <div class="row productos">
+          <div class="col-12 titulo">
+            <h2>Ofertas</h2>
+          </div>
+
+          <% ofertas.forEach(producto => { %>
+
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="contenido">
+                <figure>
+                  <a href=""
+                    ><img src="/images/products/<%= producto.image %> " alt=""
+                  /></a>
+                </figure>
+                <article>
+                  <h2>
+                    $<%= producto.price %> 
+                  </h2>
+                  <span><%= producto.discount %>% OFF</span>
+                  <p><%= producto.name %> </p>
+                  <i class="fas fa-truck"></i>
+                </article>
+              </div>
+            </div>
+            <% }) %>
+
+        </div>
+      </section>
+    </div>
+ <!--ACA VA EL FOOTER-->
+<%- include('partials/footer') %> 
+  </body>
+</html>
